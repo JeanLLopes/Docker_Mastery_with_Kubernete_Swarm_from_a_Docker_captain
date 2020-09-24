@@ -25,3 +25,25 @@
 ### List running processis in specific container
 
 -- docker top {CONTAINER ID}
+
+### Run containers
+
+**MySQL**
+docker container run -d --name db -e MYSQL_ROOT_PASSWORD=123456 mysql
+
+*show logs*
+docker container logs db
+
+
+**APACHE SERVER**
+docker container run -d --name webserver -p 8081:80 httpd
+
+*to test*
+CURL localhost:8081
+
+
+**NGINX**
+docker container run -d --name proxy -p 81:80 nginx
+
+*to test*
+CURL localhost:81
